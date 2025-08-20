@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    
+    <div class="calculadora">
+        <h2>Calcudora</h2>
+        <from method="POST">       
+            <input type="numero" step="any" name="n1" required placeholder="Primeiro número">
+            <input type="numero" step="any" name="n2" required placeholder="Segundo número">
+
+            <select name="operacao">
+                <option value="soma">Adição (+)</option>        
+                <option value="subtração">Subtração (-)</option>
+                <option value="multiplicação">Multiplicação (x)</option>    
+                <option value="divisão">Divisão (÷)</option>
+            </select>
+            <button type="submit">Calcular</button>
+        </from>  
+
+            {% if resultado is not none %}
+        <h3>Resultado: {{ resultado }}</h3>
+        {% endif %}
+    </div>
 </body>
 </html>
