@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="calculadora">
+        <h2>Calculadora</h2>
+        <form method="POST">       
+            <input type="number" step="any" name="n1" required placeholder="Primeiro número">
+            <input type="number" step="any" name="n2" required placeholder="Segundo número">
+
+            <select name="operacao">
+                <option value="soma">Adição (+)</option>        
+                <option value="subtracao">Subtração (-)</option>
+                <option value="multiplicacao">Multiplicação (x)</option>    
+                <option value="divisao">Divisão (÷)</option>
+            </select>
+            <button type="submit">Calcular</button>
+        </form>  
+
+        {% if resultado is not none %}
+        <h3>Resultado: {{ resultado }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
